@@ -1,4 +1,4 @@
-export default class API {
+class API {
     constructor(config) {
         this._url = config.url;
         this._headers = config.headers
@@ -109,10 +109,12 @@ export default class API {
 
 //Экземпляр класса API:
 
-export const api = new API ({
+const api = new API ({
     url: 'https://mesto.nomoreparties.co/v1/cohort-62',
     headers: {
       'content-type': 'application/json',
       Authorization: '0aad50e9-c4b5-4f67-8001-5116e2404bbe'
     }
   });
+
+export default api;

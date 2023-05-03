@@ -6,7 +6,7 @@ export const formValidationConfig = {
   errorClass: 'popup__form_type_error',
   buttonSelector: '.popup__button-rectangle',
   buttonDisabledClass: 'popup__button-rectangle_disabled'
-};
+}
 
 
 //Переменные для открытия картинки во весь экран:
@@ -49,4 +49,4 @@ function closePopupOverlay(evt) {
   }
 
 
-  export {openPopup, closePopup};
+export {openPopup, closePopup};
