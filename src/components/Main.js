@@ -1,7 +1,7 @@
 import React from "react";
 //import profileAvatar from "../images/image.jpg";
 import api from "../utils/api.js";
-import Card from "../components/Card.js";
+import Card from "./Card.js";
 
 function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
   const [userName, setUserName] = React.useState("");
