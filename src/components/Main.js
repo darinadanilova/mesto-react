@@ -20,7 +20,7 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
             name: card.name,
             link: card.link,
             id: card._id,
-            likes: card.likes.length
+            likes: card.likes
           }))
         )
       })

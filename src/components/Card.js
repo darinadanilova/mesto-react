@@ -11,7 +11,7 @@ function Card ({ card, onCardClick }) {
             <h2 className="element__title">{card.name}</h2> 
             <button className="element__delete"></button> 
             <button className="element__vector"></button> 
-            <h3 className="element__digital">{card.likes}</h3> 
+            <h3 className="element__digital">{card.likes.length}</h3> 
         </article>
     )
 }
