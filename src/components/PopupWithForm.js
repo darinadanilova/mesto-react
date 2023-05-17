@@ -1,7 +1,9 @@
 import React from "react";
 
 function PopupWithForm( {name, isOpen, onClose, title, children, onSubmit, button} ) {
+  
   return (
+
     <div className={`popup ${isOpen ? "popup_opened" :''}`} id={`popup_${name}`} >
       <div className={`popup__container popup__container-${name}`}>
         <button onClick={onClose} className="popup__close" aria-label="Close" type="button" name="close" id="close"></button>
@@ -12,7 +14,7 @@ function PopupWithForm( {name, isOpen, onClose, title, children, onSubmit, butto
         </form>
       </div>
     </div>
-    )
-  }
+  )
+}
 
 export default PopupWithForm;

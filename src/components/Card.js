@@ -8,7 +8,7 @@ function Card ({ card, onCardClick, onCardLike, onCardDelete }) {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
     const cardLikeButtonClassName = ( 
         `element__vector ${isLiked && 'element__vector_active'}` 
-      );; 
+    );; 
 
     function handleClick() {
         onCardClick(card);

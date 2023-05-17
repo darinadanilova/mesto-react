@@ -1,6 +1,4 @@
 import React from "react";
-//import profileAvatar from "../images/image.jpg";
-//import api from "../utils/api.js";
 import Card from "./Card.js";
 import CurrentUserContext from '../contexts/CurrentUserContext.js';
 
@@ -9,6 +7,7 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onC
   const currentUser = React.useContext(CurrentUserContext);
   
   return (
+
     <main className="main">
       <section className="profile">
         <div className="profile__container">
@@ -26,14 +25,14 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onC
         {cards.map((card) => (
           <Card
             card={card}
-            key={card.id}
+            key={card._id}
             onCardClick={onCardClick}
             onCardLike={onCardLike}
             onCardDelete={onCardDelete} />
         ))}
       </section>
     </main>
-    )
-  }
+  )
+}
 
 export default Main;

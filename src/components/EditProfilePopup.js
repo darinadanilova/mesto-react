@@ -6,15 +6,16 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
 
     const [name, setName] = React.useState('');
     const [description, setDescription] = React.useState('');
-    // Подписка на контекст
-const currentUser = React.useContext(CurrentUserContext);
+        // Подписка на контекст
+    const currentUser = React.useContext(CurrentUserContext);
 
-// После загрузки текущего пользователя из API
-// его данные будут использованы в управляемых компонентах.
-React.useEffect(() => {
-  setName(currentUser.name);
-  setDescription(currentUser.about);
-}, [isOpen, currentUser]);
+    // После загрузки текущего пользователя из API
+    // его данные будут использованы в управляемых компонентах.
+    React.useEffect(() => {
+      setName(currentUser.name);
+      setDescription(currentUser.about);
+    }, [isOpen, currentUser]);
+
 
     function handleChangeName(e) {
         setName(e.target.value);
@@ -30,16 +31,12 @@ React.useEffect(() => {
       
         // Передаём значения управляемых компонентов во внешний обработчик
         onUpdateUser(name, description);
-      }
+    }
+
 
     return (
-        <PopupWithForm
-        title={"Редактировать профиль"}
-        button={"Сохранить"}
-        name={"information"}
-        isOpen={isOpen}
-        onClose={onClose}
-        onSubmit={handleSubmit}>
+
+        <PopupWithForm title={"Редактировать профиль"} button={"Сохранить"} name={"information"} isOpen={isOpen} onClose={onClose} onSubmit={handleSubmit}>
            
             <input onChange={handleChangeName} value={name ?? ''} required type="text" minLength="2" maxLength="40" className="popup__form popup__form_input_name" id="name" name="name" placeholder="Имя" />
             <span id="name-error" className="popup__error"></span>
