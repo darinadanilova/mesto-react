@@ -72,8 +72,8 @@ function handleCardDelete(card) {
    });  
 }
 
-function handleUpdateUser({ name, about }) {
-  api.patchInfo({ name, about }).then((res) => {
+function handleUpdateUser( name, about ) {
+  api.patchInfo(name, about).then((res) => {
     setCurrentUser(res);
     closeAllPopups();
   })
@@ -83,10 +83,13 @@ function handleUpdateUser({ name, about }) {
 }
 
 function handleUpdateAvatar(avatar) {
-  api.patchAvatar(avatar).then((avatar) => {
-    setCurrentUser(avatar);
+  api.patchAvatar(avatar).then((res) => {
+    setCurrentUser(res);
     closeAllPopups();
   })
+  .catch((err) => {
+    console.log(err);
+  });
 }
 
 function handleAddPlaceSubmit(name, link) {
@@ -94,6 +97,9 @@ function handleAddPlaceSubmit(name, link) {
     setCards([card, ...cards]);
     closeAllPopups();
   })
+  .catch((err) => {
+    console.log(err);
+  });
 }
 
 

@@ -29,10 +29,7 @@ React.useEffect(() => {
         e.preventDefault();
       
         // Передаём значения управляемых компонентов во внешний обработчик
-        onUpdateUser({
-          name: name,
-          about: description,
-        });
+        onUpdateUser(name, description);
       }
 
     return (
